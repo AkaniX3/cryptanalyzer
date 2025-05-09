@@ -1,0 +1,65 @@
+{
+  "MD5": {
+    "Description": "Message Digest Algorithm 5 (MD5) is a widely used cryptographic hash function designed to produce a fixed-size 128-bit hash value. Originally developed in 1991 as an improvement over MD4, it quickly gained popularity for data integrity verification and password hashing. However, due to its vulnerability to collision attacks, it is now considered cryptographically broken and unsuitable for security-sensitive applications. Attackers can use rainbow tables, precomputed hash dictionaries, and brute force to reverse MD5 hashes, making it ineffective for modern security practices.",
+    "Hash Length": "32 characters",
+    "Security Level": "Weak (prone to collisions, pre-image attacks, and rainbow table exploits)",
+    "Common Use Cases": "Legacy password hashing, checksum verification, file integrity checking (deprecated for security applications)",
+    "Crackability": "Easily cracked using modern hardware and precomputed attack methods",
+    "Possible Next Steps": "Avoid using MD5 for security purposes; transition to SHA-256, SHA-512, or Argon2 for cryptographic security.",
+    "Algorithm Type": "Cryptographic hash function"
+  },
+  "SHA-1": {
+    "Description": "Secure Hash Algorithm 1 (SHA-1) was designed by the NSA and standardized in 1995 for secure cryptographic hashing. It produces a 160-bit hash value, making it more secure than MD5. However, advancements in cryptanalysis techniques have led to practical collision attacks, where two different inputs can produce the same hash. As a result, SHA-1 is deprecated for security-critical applications, and many organizations have migrated to stronger algorithms like SHA-256 or SHA-3. Google and CWI Amsterdam demonstrated the first practical SHA-1 collision attack in 2017, proving its vulnerability.",
+    "Hash Length": "40 characters",
+    "Security Level": "Weak (collision vulnerabilities have been demonstrated with practical attacks)",
+    "Common Use Cases": "Legacy digital signatures, software update verification, SSL/TLS certificate hashing (deprecated)",
+    "Crackability": "SHA-1 can be broken with sufficiently powerful computing resources; collision attacks are feasible within reasonable time frames.",
+    "Possible Next Steps": "Migrate to SHA-256, SHA-512, or SHA-3 for enhanced security.",
+    "Algorithm Type": "Cryptographic hash function"
+  },
+  "Bcrypt": {
+    "Description": "Bcrypt is a modern password hashing function incorporating a salt to protect against rainbow table attacks. It is intentionally slow, utilizing a work factor that increases computational cost to resist brute-force attacks. Bcrypt is widely recommended for securely storing passwords in web applications. Unlike traditional hash functions like MD5 or SHA-1, bcrypt applies multiple rounds of key derivation, making password cracking significantly harder. The work factor (cost parameter) can be adjusted over time to maintain security against increasingly powerful hardware.",
+    "Hash Length": "Varies (typically 60 characters)",
+    "Security Level": "Strong (resistant to brute-force attacks when configured with an appropriate cost factor)",
+    "Common Use Cases": "Password hashing for secure authentication systems",
+    "Crackability": "Computationally expensive to crack; effectiveness depends on the cost parameter and presence of a unique salt.",
+    "Possible Next Steps": "Ensure that password hashing uses a high-enough cost factor to mitigate brute-force attempts. Consider Argon2 for an alternative modern hashing approach.",
+    "Algorithm Type": "Password hashing function"
+  },
+  "SHA-256": {
+    "Description": "SHA-256 is a member of the SHA-2 family and is widely regarded as a secure cryptographic hash function. It generates a fixed-size 256-bit hash value and is commonly used in security-sensitive applications such as blockchain, digital signatures, and certificate validation. SHA-256 is currently resistant to all known feasible cryptographic attacks, making it a strong alternative to MD5 and SHA-1. However, for password hashing, it should be combined with a salt and key derivation functions like PBKDF2 or Argon2 to enhance security against brute-force attacks.",
+    "Hash Length": "64 characters",
+    "Security Level": "Strong (no known practical vulnerabilities)",
+    "Common Use Cases": "Digital signatures, certificate validation, password hashing (with proper salting), blockchain applications",
+    "Crackability": "Computationally infeasible to break using current technology; brute-force attacks are impractical.",
+    "Possible Next Steps": "For password hashing, use a salt and key derivation function such as PBKDF2 or Argon2 to enhance security.",
+    "Algorithm Type": "Cryptographic hash function"
+  },
+  "SHA-512": {
+    "Description": "SHA-512 is a cryptographic hash function that produces a 512-bit hash value. It is more secure than SHA-256 but has a higher computational cost. SHA-512 is widely used in security applications requiring higher resistance to brute-force and quantum computing threats. It is often used in cryptographic protocols, digital signatures, and high-security environments. SHA-512 has no known feasible attacks, making it a robust choice for long-term security applications.",
+    "Hash Length": "128 characters",
+    "Security Level": "Strong (resistant to classical and quantum attacks in the near future)",
+    "Common Use Cases": "High-security cryptographic applications, blockchain technology, file integrity verification, secure communications",
+    "Crackability": "Highly resistant to attacks; infeasible to crack with current computing power.",
+    "Possible Next Steps": "Consider using SHA-512 for security applications that require high resilience against future computational advancements.",
+    "Algorithm Type": "Cryptographic hash function"
+  },
+  "Base64": {
+    "Description": "Base64 is an encoding scheme designed to convert binary data into a text-based format. It is commonly used for encoding data in email attachments, JSON payloads, and web applications. However, Base64 is not a cryptographic function and should not be used for security purposes. Encoded data can be easily decoded back to its original form, making it unsuitable for encryption or secure storage.",
+    "Encoded Length": "Varies depending on input length",
+    "Security Level": "Not a security mechanism (easily reversible and does not provide encryption)",
+    "Common Use Cases": "Encoding binary data for transmission in text-based formats (e.g., JSON, XML, email attachments)",
+    "Crackability": "Easily decoded back to original data with no computational effort.",
+    "Possible Next Steps": "For secure data transmission, use proper encryption methods such as AES instead of Base64.",
+    "Algorithm Type": "Encoding scheme"
+  },
+  "NTLM": {
+    "Description": "NTLM (NT LAN Manager) is a challenge-response authentication protocol used in older Windows environments. NTLM hashes are derived from user passwords but are considered weak due to their susceptibility to offline brute-force attacks. Modern attackers can use tools like Hashcat to crack NTLM hashes efficiently. Due to its weaknesses, NTLM has been deprecated in favor of more secure authentication mechanisms like Kerberos.",
+    "Hash Length": "32 characters",
+    "Security Level": "Weak (vulnerable to offline brute-force and relay attacks)",
+    "Common Use Cases": "Legacy Windows authentication systems (deprecated)",
+    "Crackability": "Easily cracked using modern hardware; not suitable for secure authentication.",
+    "Possible Next Steps": "Migrate to Kerberos-based authentication or modern security protocols to protect user credentials.",
+    "Algorithm Type": "Authentication hash"
+  }
+}
