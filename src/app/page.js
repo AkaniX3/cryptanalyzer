@@ -72,42 +72,42 @@ export default function Home() {
             <div className="text-2xl leading-relaxed">
               
               {/* Algorithm Name */}
-              <h2 className="text-5xl font-bold text-blue-400 text-center">{output.algorithm}</h2>
+              <h2 className="text-5xl font-bold text-white text-center">{output.algorithm}</h2>
               
               {/* Report Sections */}
               <div className="mt-8 space-y-6">
                 <div>
-                  <h3 className="text-3xl font-semibold text-yellow-300">Description</h3>
+                  <h3 className="text-3xl font-semibold text-blue-300">Description</h3>
                   <p className="text-xl">{output.details.Description}</p>
                 </div>
                 
                 <div>
-                  <h3 className="text-3xl font-semibold text-yellow-300">Security Level</h3>
+                  <h3 className="text-3xl font-semibold text-blue-300">Security Level</h3>
                   <p className="text-xl">{output.details["Security Level"]}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-3xl font-semibold text-yellow-300">Algorithm Type</h3>
+                  <h3 className="text-3xl font-semibold text-blue-300">Algorithm Type</h3>
                   <p className="text-xl">{output.details["Algorithm Type"]}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-3xl font-semibold text-yellow-300">Hash Length</h3>
+                  <h3 className="text-3xl font-semibold text-blue-300">Hash Length</h3>
                   <p className="text-xl">{output.details["Hash Length"]}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-3xl font-semibold text-yellow-300">Common Use Cases</h3>
+                  <h3 className="text-3xl font-semibold text-blue-300">Common Use Cases</h3>
                   <p className="text-xl">{output.details["Common Use Cases"]}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-3xl font-semibold text-yellow-300">Crackability</h3>
+                  <h3 className="text-3xl font-semibold text-blue-300">Crackability</h3>
                   <p className="text-xl">{output.details.Crackability}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-3xl font-semibold text-yellow-300">Next Steps</h3>
+                  <h3 className="text-3xl font-semibold text-blue-300">Next Steps</h3>
                   <p className="text-xl">{output.details["Possible Next Steps"]}</p>
                 </div>
               </div>
